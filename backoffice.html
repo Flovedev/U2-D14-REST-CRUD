@@ -50,7 +50,7 @@
                 <label for="eventName">Product name</label>
                 <input type="text" required class="form-control" id="eventName" placeholder="Name..." />
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="eventDescription">Description</label>
                 <textarea class="form-control" required id="eventDescription" placeholder="Description..."></textarea>
             </div>
@@ -65,15 +65,8 @@
                 <label for="eventPrice">Event Price</label>
                 <input type="number" required id="eventPrice" />
             </div>
-            <div class="form-group">
-                <label for="eventCreatedAt">Created at</label>
-                <input type="datetime-local" required name="" id="eventCreatedAt" />
-            </div>
-            <div class="form-group">
-                <label for="eventUpdatedAt">Updated at</label>
-                <input type="datetime-local" required name="" id="eventUpdatedAt" />
-            </div> -->
-            <button class="btn btn-primary" onclick="handleBackoffice(event)">
+
+            <button class="btn btn-primary" onclick="handleBackoffice(event); return false">
                 Save event
             </button>
             <button class="btn btn-success" onclick="handleBackoffice(event)">

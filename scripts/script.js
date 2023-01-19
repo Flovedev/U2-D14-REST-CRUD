@@ -1,4 +1,4 @@
-const url = "https://striveschool-api.herokuapp.com/api/product/"
+const url = "https://striveschool-api.herokuapp.com/api/product"
 
 window.onload = async () => {
     await getEvents()
@@ -6,17 +6,15 @@ window.onload = async () => {
 
 const getEvents = async () => {
     try {
-
         const options = {
-            headers: new Headers({
-                "Content-type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5M2ZlY2U3MzczODAwMTUzNzQzOWUiLCJpYXQiOjE2NzQxMzM0ODQsImV4cCI6MTY3NTM0MzA4NH0.hFgMDgexrYTeLmmNmn9RaClX_VSWRtSTzkJJU_3gsgE"
-            }),
+            headers: {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5ODI3Y2U3MzczODAwMTUzNzQ2MGUiLCJpYXQiOjE2NzQxNTA1MjQsImV4cCI6MTY3NTM2MDEyNH0.a-axy8CgzTUS-HXNVlcNKHryqQRVcYCdw4l5_bOR_dg"
+            },
         }
 
         const res = await fetch(url, options)
         const events = await res.json()
-        renderEvents(events)
+        console.log(events)
     } catch (error) {
         handleError(error)
     }
@@ -24,9 +22,9 @@ const getEvents = async () => {
 
 const renderEvents = (arrayOfEvents) => {
     const container = document.querySelector("#main-container")
-    container.innerHTML = ""
+    container.innerHTML = "test"
     arrayOfEvents.forEach((singleEvent) => {
-        const { name, description, time, price, _id } = singleEvent
+        const { name, description, price, } = singleEvent
         ul.innerHTML += `test,${name}`
     })
 }
